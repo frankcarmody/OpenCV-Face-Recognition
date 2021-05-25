@@ -4,13 +4,11 @@ Real-time face recognition project with OpenCV and Python<br>Review original tut
 
 
 1. Install Open CV
-```
+```sudo rebootsudo rebootsudo apt
 sudo apt update && sudo apt upgrade
-'''
-Reboot Raspberry Pi
-'''
-sudo apt install pip3
-sudo pip install opencv-contrib-python
+sudo reboot
+sudo apt install python3-pip
+sudo apt install python3-opencv
 ```
 2. Download and unzip this respository to Raspberry Pi Desktop
 3. 
