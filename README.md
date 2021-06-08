@@ -13,6 +13,7 @@ sudo apt update && sudo apt upgrade
 sudo reboot
 sudo apt install python3-pip
 sudo apt install python3-opencv
+pip install opencv-python
 ```
 6. Download and unzip this respository https://github.com/frankcarmody/piFace
 4. Move unzipped respository folder to Raspberry Pi Desktop
