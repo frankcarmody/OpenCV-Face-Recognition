@@ -8,7 +8,7 @@ Real-time face recognition project with OpenCV and Python<br>Review original tut
 3. Reboot
 5. Install Open CV
 ```
-sudo rebootsudo rebootsudo apt
+sudo apt
 sudo apt update && sudo apt upgrade
 sudo reboot
 sudo apt install python3-pip
