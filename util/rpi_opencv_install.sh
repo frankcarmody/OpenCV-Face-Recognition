@@ -1,60 +1,18 @@
-echo "Maintain and update the distro"
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo rpi-update -y
+sudo apt -y purge wolfram-engine
+sudo apt -y purge libreoffice*
+sudo apt -y clean
+sudo aptt -y autoremove
 
-echo "Install developer tools"
-sudo apt-get install -y build-essential cmake pkg-config
+sudo apt update
+sudo apt upgrade
 
-echo "Install image I/O packages"
-sudo apt-get install -y libjpeg8-dev libtiff4-dev libjasper-dev libpng12-dev
+#This command will install the packages that contain the tools needed to compile the OpenCV code.
+sudo apt -y install cmake build-essential pkg-config git
 
-echo "Install GTK development library"
-sudo apt-get install -y libgtk2.0-dev
+sudo apt -y install libjpeg-dev libtiff-dev libjasper-dev libpng-dev libwebp-dev libopenexr-dev
+sudo apt -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libdc1394-22-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev
+sudo apt -y install libgtk-3-dev libqtgui4 libqtwebkit4 libqt4-test python3-pyqt5
 
-echo "Install video I/O packages"
-sudo apt-get install -y libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-
-echo "Install extra packages"
-sudo apt-get install -y libatlas-base-dev gfortran
-
-echo "Install pip"
-wget https://bootstrap.pypa.io/pip/2.7/get-pip.py 
-sudo python get-pip.py
-sudo pip install virtualenv virtualenvwrapper
-
-echo "Install Python development tools"
-sudo apt-get install -y python2.7-dev
-
-echo "Install Python packages"
-pip install numpy
-
-echo "Downloadg OpenCV source"
-wget -O opencv-2.4.11.zip http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.11/opencv-2.4.11.zip/download
-unzip opencv-2.4.11.zip
-cd opencv-2.4.11
-mkdir build
-cd build
-
-echo "Compile OpenCV"
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_NEW_PYTHON_SUPPORT=ON -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON  -D BUILD_EXAMPLES=ON ..
-make
-
-echo "Install OpenCV"
-sudo make install
-sudo ldconfig
-
-echo "Symlink OpenCV within virtual environment"
-cd ~/.virtualenvs/cv/lib/python2.7/site-packages/
-ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so
-ln -s /usr/local/lib/python2.7/site-packages/cv.py cv.py
-
-echo "Updating user environment"
-cat >~/.bashrc << EOF
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-export PIP_REQUIRE_VIRTUALENV=true
-export WORKON_HOME=~/python_envs
-source /usr/local/bin/virtualenvwrapper.sh
-EOF
-
-source ~/.bashrc
+sudo apt -y install libatlas-base-dev liblapacke-dev gfortran
+sudo apt -y install libhdf5-dev libhdf5-103
+sudo apt -y install python3-dev python3-pip python3-numpy
