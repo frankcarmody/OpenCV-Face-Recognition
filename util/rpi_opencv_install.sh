@@ -17,6 +17,7 @@ sudo apt -y install libatlas-base-dev liblapacke-dev gfortran
 sudo apt -y install libhdf5-dev libhdf5-103
 sudo apt -y install  python3 python3-venv python3-pip python3-dev python3-numpy
 
+#This command will create directory, download , make and install OpenCV
 mkdir ~/OpenCV
 cd ~/OpenCV
 git clone https://github.com/opencv/opencv.git
