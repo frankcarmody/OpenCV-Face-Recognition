@@ -19,7 +19,7 @@ echo "Install extra packages"
 sudo apt-get install -y libatlas-base-dev gfortran
 
 echo "Install pip"
-wget https://bootstrap.pypa.io/get-pip.py
+wget https://bootstrap.pypa.io/pip/2.7/get-pip.py 
 sudo python get-pip.py
 sudo pip install virtualenv virtualenvwrapper
 
