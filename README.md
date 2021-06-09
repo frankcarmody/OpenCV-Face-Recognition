@@ -6,11 +6,19 @@ Real-time face recognition project with OpenCV and Python<br>Review original tut
 1. Physically connect Camera to Raspbery Pi
 2. RaspberryMenu > Preferences > RaspberryPi Configuration> Interfaces set Camera to Enabled
 3. Reboot
+4. Increase swap file size to better handle low amount of  RAM. Set CONF_SWAPSIZE=100 and CONF_SWAPSIZE=2048. USe CTRL+X and then Y to save in nano.
+``` 
+sudo nano /etc/dphys-swapfile
+```
+5. Reload swpfile configuration
+```
+sudo systemctl restart dphys-swapfile
+```
 6. Download and unzip this respository https://github.com/frankcarmody/piFace
-4. Move unzipped respository folder to Raspberry Pi Desktop
-5. Open 'util' folder inside unzipped repository, right click on 'rpi_opencv_install.sh', click 'properties' and set permission to execute for anyone.
-6. Right-Click on unzipped folder on desktop, open folder, right click on "util" folder and select "Open in terminal" from context menu.
-7. Execute install script for in installing OpenCV.
+7. Move unzipped respository folder to Raspberry Pi Desktop
+8. Open 'util' folder inside unzipped repository, right click on 'rpi_opencv_install.sh', click 'properties' and set permission to execute for anyone.
+9. Right-Click on unzipped folder on desktop, open folder, right click on "util" folder and select "Open in terminal" from context menu.
+10. Execute install script for in installing OpenCV.
 ```
 ./rpi_opencv_install.sh
 ```
