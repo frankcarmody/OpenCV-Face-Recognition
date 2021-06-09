@@ -6,7 +6,7 @@ Real-time face recognition project with OpenCV and Python<br>Review original tut
 1. Physically connect Camera to Raspbery Pi
 2. RaspberryMenu > Preferences > RaspberryPi Configuration> Interfaces set Camera to Enabled
 3. Reboot
-4. Increase swap file size to better handle low amount of  RAM. Set CONF_SWAPSIZE=100 and CONF_SWAPSIZE=2048. USe CTRL+X and then Y to save in nano.
+4. Increase swap file size to better handle low amount of  RAM. Change CONF_SWAPSIZE=100 to CONF_SWAPSIZE=2048. USe CTRL+X and then Y to save in nano.
 ``` 
 sudo nano /etc/dphys-swapfile
 ```
@@ -22,7 +22,16 @@ sudo systemctl restart dphys-swapfile
 ```
 ./rpi_opencv_install.sh
 ```
-9. Test Camera
+9. Decrease swap file size. Change CONF_SWAPSIZE=2048 to CONF_SWAPSIZE=100. USe CTRL+X and then Y to save in nano.
+``` 
+sudo nano /etc/dphys-swapfile
+```
+11.  Reload swpfile configuration
+```
+sudo systemctl restart dphys-swapfile
+```
+12.  
+13. Test Camera
 ```
 python simpleCamTest.py
 ```
