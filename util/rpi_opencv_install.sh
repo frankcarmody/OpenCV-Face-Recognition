@@ -2,7 +2,7 @@
 sudo apt -y purge wolfram-engine
 sudo apt -y purge libreoffice*
 sudo apt -y clean
-sudo aptt -y autoremove
+sudo apt -y autoremove
 
 #Update software on rPi
 sudo apt update
