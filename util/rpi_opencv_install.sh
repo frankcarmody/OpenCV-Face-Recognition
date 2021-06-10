@@ -20,18 +20,14 @@ sudo apt -y install libhdf5-dev libhdf5-103
 sudo apt -y install  python3 python3-venv python3-pip python3-dev python3-numpy virtualenv
 
 
-update-alternatives --remove-all python
-update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
-update-alternatives --remove-all python3
-update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 1
-
 
 sudo pip3 install virtualenv
 sudo -u pi pip3 install virtualenv
 sudo -u pi virtualenv -p python3 /home/pi/Desktop/PiFaceVirtualEnv
 source "/home/pi/Desktop/PiFaceVirtualEnv/bin/activate"
-pipo install numpy
-pip install opencv-contrib-python --user
+pip install numpy pillow
+pip install --upgrade pip wheel setuptools
+pip install opencv-contrib-python
 source deactivate
 
 
