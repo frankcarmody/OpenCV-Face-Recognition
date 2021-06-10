@@ -18,8 +18,9 @@ sudo systemctl restart dphys-swapfile
 7. Move unzipped respository folder to Raspberry Pi Desktop
 8. Open 'util' folder inside unzipped repository, right click on 'rpi_opencv_install.sh', click 'properties' and set permission to execute for anyone.
 9. Click on unzipped folder on desktop, open folder, right click on "util" folder and select "Open in terminal" from context menu.
-10. Execute install script for in installing OpenCV from terminal in util in '/home/pi/Desktop/piFace-master' folder
+10. Make the setup script executable. Execute install script for in installing OpenCV from terminal in util in '/home/pi/Desktop/piFace-master' folder
 ```
+sudo chmod +x rpi_opencv_install.sh
 ./rpi_opencv_install.sh
 ```
 9. Decrease swap file size. Change CONF_SWAPSIZE=2048 to CONF_SWAPSIZE=100. USe CTRL+X and then Y to save in nano.
