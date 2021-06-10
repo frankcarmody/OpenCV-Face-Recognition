@@ -17,7 +17,23 @@ sudo apt -y install libgtk-3-dev libqtgui4 libqtwebkit4 libqt4-test python3-pyqt
 
 sudo apt -y install libatlas-base-dev liblapacke-dev gfortran
 sudo apt -y install libhdf5-dev libhdf5-103
-sudo apt -y install  python3 python3-venv python3-pip python3-dev python3-numpy
+sudo apt -y install  python3 python3-venv python3-pip python3-dev python3-numpy virtualenv
+
+
+update-alternatives --remove-all python
+update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+update-alternatives --remove-all python3
+update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 1
+
+
+sudo pip3 install virtualenv
+sudo -u pi pip3 install virtualenv
+sudo -u pi virtualenv -p python3 /home/pi/Desktop/PiFaceVirtualEnv
+source "/home/pi/Desktop/PiFaceVirtualEnv"
+pipo install numpy
+pip install opencv-contrib-python --user
+deactivate
+
 
 #This command will create directory, download , make and install OpenCV
 mkdir ~/OpenCV
