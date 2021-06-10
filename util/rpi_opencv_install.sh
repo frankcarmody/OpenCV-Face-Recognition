@@ -29,10 +29,10 @@ update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 1
 sudo pip3 install virtualenv
 sudo -u pi pip3 install virtualenv
 sudo -u pi virtualenv -p python3 /home/pi/Desktop/PiFaceVirtualEnv
-source "/home/pi/Desktop/PiFaceVirtualEnv"
+source "/home/pi/Desktop/PiFaceVirtualEnv/bin/activate"
 pipo install numpy
 pip install opencv-contrib-python --user
-deactivate
+source deactivate
 
 
 #This command will create directory, download , make and install OpenCV
