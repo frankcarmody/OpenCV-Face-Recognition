@@ -34,6 +34,7 @@ sudo systemctl restart dphys-swapfile
 12. Click on unzipped folder on desktop, open folder, right click on "util" folder and select "Open in terminal" from context menu.
 13. Test Camera
 ```
+source "/home/pi/Desktop/PiFaceVirtualEnv/bin/activate"
 python3 simpleCamTest.py
 ```
 7. If simpleCamTest.py works, then you can execute the scripts in '/home/pi/Desktop/piFace-master/FaceDetection' by right clicking on the folder , opening in terminal, then using the 'python3 scripName.py' syntax to run each script.
