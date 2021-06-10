@@ -21,15 +21,6 @@ sudo apt -y install  python3 python3-venv python3-pip python3-dev python3-numpy 
 
 
 
-sudo pip3 install virtualenv
-sudo -u pi pip3 install virtualenv
-sudo -u pi virtualenv -p python3 /home/pi/Desktop/PiFaceVirtualEnv
-source "/home/pi/Desktop/PiFaceVirtualEnv/bin/activate"
-pip install numpy pillow
-pip install --upgrade pip wheel setuptools
-pip install opencv-contrib-python
-source deactivate
-
 
 #This command will create directory, download , make and install OpenCV
 mkdir ~/OpenCV
@@ -43,3 +34,13 @@ make -j$(nproc)
 sudo make install
 sudo ldconfig
    
+   
+sudo pip3 install virtualenv
+sudo -u pi pip3 install virtualenv
+sudo -u pi virtualenv -p python3 /home/pi/Desktop/PiFaceVirtualEnv
+source "/home/pi/Desktop/PiFaceVirtualEnv/bin/activate"
+pip install numpy pillow
+pip install --upgrade pip wheel setuptools
+pip install opencv-contrib-python
+source deactivate
+
