@@ -17,8 +17,8 @@ sudo systemctl restart dphys-swapfile
 6. Download and unzip this respository https://github.com/frankcarmody/piFace
 7. Move unzipped respository folder to Raspberry Pi Desktop
 8. Open 'util' folder inside unzipped repository, right click on 'rpi_opencv_install.sh', click 'properties' and set permission to execute for anyone.
-9. Right-Click on unzipped folder on desktop, open folder, right click on "util" folder and select "Open in terminal" from context menu.
-10. Execute install script for in installing OpenCV.
+9. Click on unzipped folder on desktop, open folder, right click on "util" folder and select "Open in terminal" from context menu.
+10. Execute install script for in installing OpenCV from terminal in util in '/home/pi/Desktop/piFace-master' folder
 ```
 ./rpi_opencv_install.sh
 ```
@@ -30,9 +30,10 @@ sudo nano /etc/dphys-swapfile
 ```
 sudo systemctl restart dphys-swapfile
 ```
-12.  
+12. Click on unzipped folder on desktop, open folder, right click on "util" folder and select "Open in terminal" from context menu.
 13. Test Camera
 ```
-python simpleCamTest.py
+python3 simpleCamTest.py
 ```
-7. 
+7. If simpleCamTest.py works, then you can execute the scripts in '/home/pi/Desktop/piFace-master/FaceDetection' by right clicking on the folder , opening in terminal, then using the 'python3 scripName.py' syntax to run each script.
+8. After running these tests, move onto training facial recognition. Based on excellent instructables tutorial above.
