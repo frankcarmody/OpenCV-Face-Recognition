@@ -13,7 +13,7 @@ import cv2
 import os
 
 if not os.path.exists('dataset'):os.makedirs('dataset')
-if not os.path.exists('trainer'):os.makedirs('trainer')
+
 	
 cam = cv2.VideoCapture(0)
 cam.set(3, 640) # set video width
