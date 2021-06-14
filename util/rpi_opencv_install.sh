@@ -42,5 +42,5 @@ source "/home/pi/Desktop/PiFaceVirtualEnv/bin/activate"
 pip install numpy pillow
 pip install --upgrade pip wheel setuptools
 pip install opencv-contrib-python
-source deactivate
+deactivate
 
