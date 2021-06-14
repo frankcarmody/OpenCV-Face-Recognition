@@ -39,7 +39,7 @@ minH = 0.1*cam.get(4)
 
 def takeAction(userName):
   if userName not in authorizedUsers:
-    print(f'Taking action for id = {id} user = {names[id]}')
+    print(f'Taking action for user = {userName}')
     ser  = serial.Serial('COM4', 9800, timeout=1)
     time.sleep(0.5)
     ser.write(b'H')   # send the pyte string 'H'
