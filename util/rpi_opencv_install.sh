@@ -39,7 +39,7 @@ sudo pip3 install virtualenv
 sudo -u pi pip3 install virtualenv
 sudo -u pi virtualenv -p python3 /home/pi/Desktop/PiFaceVirtualEnv
 source "/home/pi/Desktop/PiFaceVirtualEnv/bin/activate"
-pip install numpy pillow serial
+pip install numpy pillow pyserial
 pip install --upgrade pip wheel setuptools
 pip install opencv-contrib-python
 deactivate
