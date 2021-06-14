@@ -13,6 +13,7 @@ import cv2
 import numpy as np
 import os
 import serial
+import time
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('trainer/trainer.yml')
@@ -27,6 +28,7 @@ id = 0
 # names related to ids: example ==> Marcelo: id=1,  etc
 names = ['Frank', 'None', 'Linus']
 authorizedUsers = ['Linus']
+arduinoPort = '/dev/ttyUSB0'
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
@@ -38,17 +40,17 @@ minW = 0.1*cam.get(3)
 minH = 0.1*cam.get(4)
 
 def takeAction(userName):
-  if userName not in authorizedUsers:
-    print(f'Taking action for user = {userName}')
-    ser  = serial.Serial('COM4', 9800, timeout=1)
-    time.sleep(0.5)
-    ser.write(b'H')   # send the pyte string 'H'
-    time.sleep(0.5)   # wait 0.5 seconds
-    ser.write(b'L')   # send the byte string 'L'
-  
+    print(f'Taking action for user = {id}')
+    ser  = serial.Serial(arduinoPort, 9800, timeout=1)
+    if userName not in authorizedUsers:
+        time.sleep(0.5)
+        ser.write(b'H')   # send the pyte string 'H'
+        time.sleep(0.5)   # wait 0.5 seconds
+        ser.write(b'L')   # send the byte string 'L'
+    else:
+        ser.write(b'L')   # send the byte string 'L'
 
 while True:
-
     ret, img =cam.read()
     img = cv2.flip(img, -1) # Flip vertically
 
