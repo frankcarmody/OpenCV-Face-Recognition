@@ -26,7 +26,7 @@ id = 0
 
 # names related to ids: example ==> Marcelo: id=1,  etc
 names = ['Frank', 'None', 'Linus']
-authorizedUsers = ['Linus'']
+authorizedUsers = ['Linus']
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
@@ -38,7 +38,7 @@ minW = 0.1*cam.get(3)
 minH = 0.1*cam.get(4)
 
 def takeAction(userName):
-  if userName Not In authorizedUsers:
+  if userName not in authorizedUsers:
     print(f'Taking action for id = {id} user = {names[id]}')
     ser  = serial.Serial('COM4', 9800, timeout=1)
     time.sleep(0.5)
